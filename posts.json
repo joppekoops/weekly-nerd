@@ -1,0 +1,69 @@
+{
+	"@context": "https://schema.org/",
+	"@type": "Blog",
+	"@id": "",
+	"name": "Weekly Nerd",
+	"description": "",
+	"publisher": {
+		"@type": "Person",
+		"@id": "/person/joppekoops",
+		"name": "Joppe Koops",
+		"image": {
+			"@type": "ImageObject",
+			"@id": "/images/joppekoops_profile.jpg",
+			"url": "/images/joppekoops_profile.jpg",
+			"width": "460",
+			"height": "460"
+		}
+	},
+	"blogPost": [
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/stop-using-js-for-that",
+			"headline": "Weekly Nerd 1: Stop Using JS for That",
+			"name": "Weekly Nerd 1: Stop Using JS for That",
+			"description": "Developer Kilian Valkhof bouwt al bijna 20 jaar websites. Hij heeft onder andere gewerkt aan Electron (https://www.electronjs.org/), een tool om desktop apps te bouwen met code van het web, maar maakt momenteel de Polypane browser (https://polypane.app/), een browser speciaal voor web developers. In deze eerste weekly nerd vertelde hij over hoe er steeds meer kan met HTML en CSS zonder gebruik te maken van JavaScript.",
+			"datePublished": "2024-02-07",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/stop-using-js-for-that",
+			"keywords": [
+				"js"
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/enhancing-website-accessibility",
+			"headline": "Weekly Nerd 2: Enhancing Website Accessibility",
+			"name": "Weekly Nerd 2: Enhancing Website Accessibility",
+			"description": "Fenna de Wilde heeft zelf ook Communicatie & Multimedia Design gestudeerd en daarbij ook de minor Web Development & Design gevolgd. Nu werkt ze als creative developer bij Bakken & Baeck (https://tech.bakkenbaeck.com/), een tech en design bedrijf. Fenna vertelde hoe toegankelijkheid vaak wordt vergeten en als niet belangrijk wordt gezien. “Er is heel veel mogelijk om mooie dingen te maken, maar gebruikers moeten het wel kunnen gebruiken” zegt Fenna. Vaak geven bedrijven hier niet om, dan is het belangrijk om te laten zien hoe belangrijk het is. In deze weekly nerd, gaf Fenna hier een aantal voorbeelden van.",
+			"datePublished": "2024-02-14",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/enhancing-website-accessibility",
+			"keywords": [
+				"accessibility"
+			]
+		}
+	]
+}

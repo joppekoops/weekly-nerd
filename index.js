@@ -2,6 +2,7 @@ import { App } from '@tinyhttp/app';
 import { logger } from '@tinyhttp/logger';
 import ejs from 'ejs';
 import sirv from 'sirv';
+import fs from 'node:fs';
 
 // Create the app
 const app = new App();
@@ -21,6 +22,11 @@ app
 
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
+
+	const posts = await fs.promises.readFile("posts.json", { encoding: "utf-8" });
+
+	console.log(posts);
+
 	res.send('test');
 });
