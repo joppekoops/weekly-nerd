@@ -1,17 +1,21 @@
 <%- include('partials/head.ejs', {title: 'Artikelen'}); %>
 	
 	<header>
-		<h1>Blog artikelen</h1>
+		<div class="wrapper">
+			<h1>Blog artikelen</h1>
+		</div>
 	</header>
 
 	<main>
+		<div class="wrapper">
 	
-	<% for (post of posts) { %>
+		<% for (post of posts) { %>
 
-		<%- include('partials/blog-item.ejs', {post})%>
+			<%- include('partials/blog-item.ejs', {post})%>
 
-	<% }; %>
+		<% }; %>
 
+		</div>
 	</main>
 
 <%- include('partials/foot.ejs'); %>
