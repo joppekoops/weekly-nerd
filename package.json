@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon index.js"
   },
-  "author": "Joppe Koops"
+  "author": "Joppe Koops",
+  "dependencies": {
+    "@tinyhttp/app": "^2.2.3",
+    "@tinyhttp/logger": "^2.0.0",
+    "ejs": "^3.1.10",
+    "sirv": "^2.0.4"
+  }
 }
