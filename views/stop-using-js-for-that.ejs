@@ -1,0 +1,109 @@
+<%- include('partials/head.ejs', {title: 'Weekly Nerd 1: Stop Using JS for That'}); %>
+	
+	<header>
+		<hgroup>
+			<p>Weekly Nerd 1</p>
+			<h1>Stop Using JS for That</h1>
+			<p>By: Kilian Valkhof on <time datetime="2024-02-07">7 februari 2024</time></p>
+		</hgroup>
+	</header>
+	<main>
+		
+		<p>Developer Kilian Valkhof bouwt al bijna 20 jaar websites. Hij heeft onder andere gewerkt aan <a href="https://www.electronjs.org"/>Electron</a>, een tool om desktop apps te bouwen met code van het web, maar maakt momenteel de <a href="https://polypane.app/">Polypane browser</a>, een browser speciaal voor web developers. In deze eerste weekly nerd vertelde hij over hoe er steeds meer kan met HTML en CSS zonder gebruik te maken van JavaScript.</p>
+		
+		<h2>The Rule of Least Power</h2>
+		
+		<p>Kilian begon met 'the Rule of Least Power', ofwel: kies de programmeertaal die net genoeg kan voor wat je wilt. Kan het niet met HTML, voeg dan CSS toe. Kan dat ook niet, gebruik dan pas JavaScript. JavaScript is het breekbaarst, kost veel tijd en maakt grote bestanden. Bovendien moet het web bruikbaar zijn met alleen HTML.</p>
+		<p>Alles wat je nu met JavaScript bouwt en nu werkt, blijft altijd werken (backwards compatibility). Zo werkt ook de eerste website nog op een moderne browser. Maar er komen wel betere manieren om hetzelfde te doen. Iets wat nu kan met JavaScript, kan in de toekomst misschien wel met CSS. Blijf dus altijd leren en kijk of er ondertussen een betere manier is, concludeert Kilian.</p>
+		<p>Die volgorde van HTML, naar CSS, naar JavaScript spreekt voor mij voor zich. Zo wordt een website ook progressive enhanced. Maar naar mijn idee vergeet Kilian een belangrijk punt. Al die moderne functionaliteiten worden niet ondersteund door oudere browserversies. Zoiets als forwards compatibility bestaat gewoon niet. Als je naar browser versie gebruik tabel van caniuse kijkt valt op dat niet iedereen de nieuwste versie gebruikt. Ik wil dus toevoegen dat je ook eerst goed moet kijken of de nieuwe functionaliteit ook goed wordt ondersteund door verschillende browsers.</p>
+		
+		<h2>Voorbeelden van hoe het beter kan</h2>
+
+		<p>Kilian heeft een aantal voorbeelden van betere manieren laten zien. Van de voorbeelden die ik interessant vind, heb ik een lijstje gemaakt:</p>
+		
+		<ul>
+			
+			<li>
+				
+				<h3>Custom toggles</h3>
+
+				<p>Een veelvoorkomend element is een schakelaar in plaats van een checkbox. Input elementen zijn van zichzelf helaas niet goed te stylen. Die elementen worden namelijk door de browser geleverd en kunnen dus ook per browser verschillen.</p>
+				
+				<pre><code data-syntax="html">&lt;label&gt;
+	&lt;input type="checkbox" /&gt;
+	My feature
+&lt;/label&gt;</code></pre>
+
+				<iframe></iframe>
+
+				<p>In CSS is het mogelijk om het standaard uiterlijk niet toe te voegen. Zo wordt het mogelijk om het element wel te stylen en kan een checkbox als een schakelaar worden weergegeven.</p>
+
+				<pre><code data-syntax="css">input[type="checkbox"] {
+	appearance: none;
+}</code></pre>
+
+				<p>De <code>appearance: none;</code> zorgt dat niet de standaard van het operating system wordt geladen. Hierdoor zijn opeens ook de <code>:before</code> en <code>:after</code> pseudo-class beschikbaar.</p>
+				<p>Daarnaast is Safari gestart met een nieuw HTML-attribuut om een switch te maken. Dit is nog niet de standaard.</p>
+
+				<pre><code data-syntax="html">&lt;input type="checkbox" switch /&gt;</code></pre>
+
+			</li>
+
+			<li>
+				
+				<h3>Datalist</h3>
+				
+				<p>Met een datalist kun je opties geven voor een input. Meer kan het op dit moment niet. De lijst is bijvoorbeeld nog niet te stylen. In de toekomst komt dit misschien wel.</p>
+
+			</li>
+
+			<li>
+
+				<h3>Carrousel</h3>
+
+				<ul class="carousel">
+					<li>Scroll snap kun je gebruiken om een element aan zijn parent te laten snappen.</li>
+					<li>Op de parent zet je <code>scroll-snap-type</code> met de richting x of y, en de optie mandatory (altijd) of proximity (als het dicht bij de rand komt).</li>
+					<li>Op het element zelf gebruik je <code>scroll-snap-align</code>, voor de positie waar je het wil laten snappen.</li>
+					<li><a href="https://codepen.io/collection/KpqBGW?cursor=eyJwYWdlIjo3fQ==">Codepen</a></li>
+				</ul>
+
+			</li>
+
+			<li>
+
+				<h3>Accordion</h3>
+
+				<details name="accordion">
+					<summary>Gebruik</summary>
+					<p>Accordions zijn handig voor het opsplitsen van content. In HTML kan dit met de <code>&lt;details&gt;</code> en <code>&lt;summary&gt;</code> elementen.</p>
+				</details>
+				<details name="accordion">
+					<summary>Stijlen</summary>
+					<p>Met <code>summary::marker</code> kan je het pijltje stijlen. Van zichzelf is het niet duidelijk of het element klikbaar is, dus voeg hier zelf iets voor toe.</p>
+				</details>
+				<details name="accordion">
+					<summary>Eén of meerdere open</summary>
+					<p>Details met dezelfde naam kan er maar één tegelijk van open zijn. Maar de vraag is of dit wel de juiste manier is. Zo is het onmogelijk om te vergelijken.</p>
+				</details>
+
+			</li>
+
+			<li>
+
+				<h3>Dialog</h3>
+
+				<p>Waar je voorheen een modal kon maken met prompt of confirm in JavaScript is het nu mogelijk met het nu mogelijk met het <code>&lt;dialog&gt;</code> element in HTML. Het voordeel is dat die niet de JavaScript stopt en zelf te stylen is met CSS. Hierbij is ook de nieuwe form method 'dialog', die sluit vanzelf de dialog.</p>
+				<p>Er is wel Javascript nodig om de modal te openen, namelijk met <code>showModal()</code>, en om de teruggegeven waarde te krijgen, met <code>dialog.returnValue</code>.</p>
+				<p><code>::backdrop</code> is in de CSS te gebruiken om de achtergrond die over de pagina komt te stylen.</p>
+
+			</li>
+
+		</ul>
+
+		<p>Kilian sloot af met een aantal functionaliteiten die in de nabije toekomst naar browsers komen. Kijk dus vooral wanneer deze beschikbaar zijn.</p>
+		
+		<h2>Conclusie</h2>
+	</main>
+
+<%- include('partials/foot.ejs'); %>

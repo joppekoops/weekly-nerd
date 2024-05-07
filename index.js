@@ -45,3 +45,15 @@ app.get('/', async(req, res) => {
 
 	res.render('index', {posts: data.blogPost, formatDate});
 });
+
+app.get('/post/:id', async(req, res) => {
+	fs.access(`views/${req.params.id}.ejs`, (err) => {
+		if (err) {
+			res.status(404);
+			res.render('404');
+		} else {
+			res.render(req.params.id);
+		}
+	});
+	
+})
