@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weekly Nerd Blog</title>
+</head>
+<body>
+
+	<h1>Blog artikelen</h1>
+	
+	<% for (post of posts) { %>
+
+		<article>
+			<a href="<%= post['url'] %>"><h2><%= post['headline'] %></h2></a>
+			<b><time datetime=""><%= formatDate(post['datePublished']) %></time></b>
+			<p><%= post['description'] %></p>
+		</article>
+
+	<% }; %>
+
+</body>
+</html>

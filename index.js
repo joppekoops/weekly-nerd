@@ -4,6 +4,21 @@ import ejs from 'ejs';
 import sirv from 'sirv';
 import fs from 'node:fs';
 
+function formatDate(date) {
+
+	const timestamp = Date.parse(date);
+
+	const dateObject = new Date(timestamp);
+
+	const options = {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	}
+
+	return dateObject.toLocaleDateString('nl-NL', options);
+}
+
 // Create the app
 const app = new App();
 
@@ -24,9 +39,9 @@ app
 // Routes
 app.get('/', async(req, res) => {
 
-	const posts = await fs.promises.readFile("posts.json", { encoding: "utf-8" });
+	const json = await fs.promises.readFile("posts.json", { encoding: "utf-8" });
 
-	console.log(posts);
+	const data = await JSON.parse(json);
 
-	res.send('test');
+	res.render('index', {posts: data.blogPost, formatDate});
 });
