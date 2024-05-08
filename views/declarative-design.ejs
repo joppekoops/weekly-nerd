@@ -1,0 +1,88 @@
+<%- include('partials/head.ejs', {title: 'Weekly Nerd 5: Declarative Design'}); %>
+	
+<header>
+	<div class="wrapper">
+		<hgroup>
+			<p>Weekly Nerd 5</p>
+			<h1>Declarative Design</h1>
+		</hgroup>
+		<p>Door: Jeremy Keith op <time datetime="2024-03-14">14 maart 2024</time></p>
+	</div>
+</header>
+<main>
+	<div class="wrapper">
+
+		<p>Jeremy Keith maakt al 27 jaar lang websites. Hij is mede-oprichter van het bedrijf <a href="https://clearleft.com/">Clearleft</a> waar hij werkt als webdeveloper en onderzoeker. In deze weekly nerd verteld hij over <i>declarative design</i>, een bepaalde manier van ontwerpen en ontwikkelen. Daarbij maakt Jeremy een vergelijking tussen <i>declarative</i> en <i>imperative</i>.</p>
+
+		<h2>Wat is declarative?</h2>
+		<p>Om <i>declarative design</i> uit te leggen begint Jeremy vanuit de muziek. Aan de ene kant heb je klassieke muziek, met als voorbeeld Mozart. Bij klassieke muziek staan alle noten precies opgeschreven op bladmuziek zoals je ze moet spelen. Aan de andere kant heb je jazz muziek, met als voorbeeld Miles Davis. Voor jazz muziek is er vaak geen bladmuziek met preciese noten, maar een akoorden schema, een soort schets van hoe het ongeveer moet worden. Dit is vergelijkbaar met hoe we op twee manieren kunnen programmeren. <i>Imperative programming</i> is heel exact en stap voor stap. <i>Declarative programming</i> is juist niet specifiek, je geeft aan wat je als resultaat wilt en laat de computer bepalen hoe dit gebeurt.</p>
+
+		<h2>Declarative vs. Imperative</h2>
+		<p>HTML en CSS zijn beide voorbeelden van <i>declarative</i> talen. Elke regel code in CSS is een suggestie. JavaScript is juist een voorbeeld van een <i>imperative</i> taal. Dit geeft je meer controle, maar daardoor kan er ook meer fout gaan. Als je in JavaScript één fout maakt, werkt je hele script niet meer. Als je in CSS een fout maakt, wordt die regel simpel overgeslagen.</p>
+
+		<div class="table-container">
+			<table>
+				<thead>
+					<tr>
+						<th>Declarative</th>
+						<th>Imperative</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Fouten worden genegeerd</td>
+						<td>Fouten breken alles</td>
+					</tr>
+					<tr>
+						<td>Je geeft suggesties</td>
+						<td>Meer controle</td>
+					</tr>
+					<tr>
+						<td>Domein specifiek</td>
+						<td>Kan op meerdere plaatsen worden gebruikt</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>Mindset</h2>
+
+		<p>Er is dus een verschil in talen, maar volgens Jeremy nog belangrijker is het verschil in <i>mindset</i>. Je zou met JavaScript een button kunnen maken, maar beter is om gewoon het HTML <code>&lt;button&gt;</code> element te gebruiken.</p>
+
+		<blockquote>
+			<p>JavaScript should only do what only JavaScript can do.</p>
+		</blockquote>
+
+		<p>Waarom gebruiken mensen dan toch JavaScript? Omdat ze controle willen. Iets <i>declarative</i> doen, voelt als de controle verliezen. Er gebeuren dingen zonder dat jij hebt gezegt dat het moet gebeuren.</p>
+
+		<p>Jeremy laat dit zien aan de hand van voorbeelden in CSS. Ook CSS kan volgens Jeremy meer <i>declerative</i> zijn.</p>
+
+		<h3>Declarative CSS</h3>
+
+		<ul>
+			<li>
+				<h4><code>font-size: 16px;</code> → <code>font-size: 1rem;</code></h4>
+				<p>Lettergrootte kan je aangeven in pixels, maar ook in rem. Standaard is dit hetzelfde, maar rem is meer <i>declerative</i>, dit hangt af van wat de gebruiker heeft opgegeven als lettergrootte, wel zo gebruikersvriendelijk!</p>
+			</li>
+			<li>
+				<h4><code>padding-left</code> → <code>padding-inline-start</code></h4>
+				<p>Waar <i>padding inline start</i> is kan in een andere taal veranderen, dit zorgt er juist voor dat de padding in die taal ook nog logisch is.</p>
+			</li>
+			<li>
+				<h4><code>font-size: calc(.5rem + 0.6vw)</code></h4>
+				<p>De eenheid vw maakt de lettergrootte afhankelijk van de schermbreedte, toch voegen we ook nog rem toe om de voorkeuren van de gebruiker te volgen. Op deze manier weet je als developer helemaal niet meer hoe groot het wordt, maar je weet wel dat het er op elk apparaat goed uitziet.</p>
+			</li>
+		</ul>
+
+		<p>Jeremy vindt dit een goede samenwerking tussen mens en computer. Een computer is immers om te rekenen. Dit is heel anders dan dat je alles moet aangeven.</p>
+
+		<h2>Is declarative beter?</h2>
+		<p>Jeremy eindigt met de vraag of <i>declarative</i> beter is dan <i>imperative</i>. Dit hangt volgens hem af van de context. Een manager van een team kan bijvoorbeeld heel strict moeten zijn omdat de leden van het team anders niet goed weten wat ze moeten doen, of andersom kunnen sommige mensen juist niet tegen die controle. Een ander voorbeeld is een design system. Hierin kunnen hele specifieke waardes staan, of juist richtlijnen. Ten slotte zijn er verschillende mediums. Voor print kan je vaste waardes gebruiken, omdat je het papier formaat weet. Voor web design kan dit niet, je weet immers niets over het apparaat dat je gebruiker gebruikt om je website te bekijken</p>
+
+	</div>	
+</main>
+
+<script src="/scripts/script.js"></script>
+
+
+<%- include('partials/foot.ejs'); %>

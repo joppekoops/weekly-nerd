@@ -64,6 +64,105 @@
 			"keywords": [
 				"accessibility"
 			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/the-wrapper-element",
+			"headline": "Weekly Nerd 4: The Wrapper Element",
+			"name": "Weekly Nerd 4: The Wrapper Element",
+			"description": "Nils Binder werkt bij 9Elements als front-end developer en hij is daar het hoofd van het webdesign team van zeven werknemers. Met zijn team werkt hij aan kleine to medium websites. In deze weekly nerd gaf Nils ons zijn ideeën over het veelgebruikte wrapper-element en hoe dit veel beter zou kunnen.",
+			"datePublished": "2024-03-06",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/the-wrapper-element",
+			"keywords": [
+				"css"
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/declarative-design",
+			"headline": "Weekly Nerd 5: Declarative Design",
+			"name": "Weekly Nerd 5: Declarative Design",
+			"description": "Jeremy Keith maakt al 27 jaar lang websites. Hij is mede-oprichter van het bedrijf Clearleft waar hij werkt als webdeveloper en onderzoeker. In deze weekly nerd verteld hij over declarative design, een bepaalde manier van ontwerpen en ontwikkelen. Daarbij maakt Jeremy een vergelijking tussen declarative en imperative.",
+			"datePublished": "2024-03-14",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/declarative-design",
+			"keywords": [
+				"declarative",
+				"css",
+				"design"
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/digitaal-toegankelijk",
+			"headline": "Weekly Nerd 6: Digitaal Toegankelijk",
+			"name": "Weekly Nerd 6: Digitaal Toegankelijk",
+			"description": "Digitaal Toegankelijk is een bedrijf wat andere bedrijven en organisaties helpt op het gebied van toegankelijkheid. In deze weekly nerd vertelden Marieke en Pim over die toegankelijkheid en hoe ze te werk gaan. Pim is mede-oprichter van het bedrijf en Marieke is nu onderzoeker bij het bedrijf. Marieke heeft zelf ook Communnicatie & Multimedia Design gestudeerd en is daarbij afgestudeerd op toegankelijkheid.",
+			"datePublished": "2024-04-03",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/digitaal-toegankelijk",
+			"keywords": [
+				"toegankelijkheid",
+				"WCAG"
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/creative-coding",
+			"headline": "Weekly Nerd 7: Creative Coding",
+			"name": "Weekly Nerd 7: Creative Coding",
+			"description": "Rosa heeft als creative director gewerkt bij Elastique en Wetteloos. Daarna heeft ze aan de kunstacademie een master gevolgt in experimental publishing. In deze weekly nerd vertelde ze over ciruit bending en creative coding. Ze vertelde over allerlei creative dingen met code en techniek die ze daarmee doet en maakte af en toe een bruggetje naar de wereld van webdevelopment.",
+			"datePublished": "2024-04-10",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/creative-coding",
+			"keywords": [
+				"creativiteit"
+			]
 		}
 	]
 }

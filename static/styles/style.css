@@ -45,6 +45,7 @@ h1 {
 	margin-block-end: .5em;
 	margin-block-start: .25em;
 	line-height: 1.2;
+	font-family: Roboto Slab, serif;
 }
 
 hgroup p {
@@ -57,14 +58,26 @@ h3 {
 	margin-block-end: .75em;
 	color: var(--heading-color);
 	line-height: 1.2;
+	font-family: Roboto Slab, serif;
 }
 
 a {
 	color: var(--heading-color);
 }
 
-code {
+img {
+	max-width: 100%;
+	display: block;
+}
 
+figure {
+	border: 1px solid var(--border-color);
+	border-radius: .75em;
+	overflow: hidden;
+}
+
+code {
+	font-family: monospace;
 	border: .5px solid var(--border-color);
 	padding: .2em;
 	border-radius: .2em;
@@ -203,6 +216,52 @@ details p {
 	}
 }
 
+.table-container {
+	min-width: 100%;
+	overflow: auto;
+}
+
+table {
+	border-collapse: collapse;
+	min-width: 25em;
+}
+
+thead {
+	background: var(--background-color-3);
+}
+
+tbody {
+
+}
+
+td, th {
+	border: 1px solid var(--border-color);
+	padding: .5em 1em;
+	width: 50%;
+}
+
+blockquote {
+	position: relative;
+	margin-block: 2em;
+	margin-inline: 0;
+	padding-inline: 2em;
+	width: fit-content;
+	font-size: 1.2em;
+	opacity: .8;
+}
+
+blockquote:before {
+	content: '“';
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size: 2em;
+	line-height: 1.6rem;
+	color: var(--heading-color);
+	padding-inline: .5rem;
+	font-family: Roboto Slab, serif;
+}
+
 .blog-item {
 	display: grid;
 	border: 1px solid var(--border-color);
@@ -213,9 +272,10 @@ details p {
 	max-width: 70ch;
 }
 
-.blog-item h2 {
+.blog-item h3 {
 	margin: 0;
 	margin-block-end: .5em;
+	font-size: 1.6em;
 }
 
 .blog-item p {

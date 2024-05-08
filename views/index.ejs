@@ -1,19 +1,41 @@
-<%- include('partials/head.ejs', {title: 'Artikelen'}); %>
+<%- include('partials/head.ejs', {title: 'Home'}); %>
 	
 	<header>
 		<div class="wrapper">
-			<h1>Blog artikelen</h1>
+			<h1>Weekly Nerd Blog</h1>
 		</div>
 	</header>
 
 	<main>
 		<div class="wrapper">
+
+		<h2>Artikelen</h2>
 	
 		<% for (post of posts) { %>
 
 			<%- include('partials/blog-item.ejs', {post})%>
 
 		<% }; %>
+
+		<h2>Leerdoelen</h2>
+
+		<ul>
+			<li>
+				<h3>Object Oriented Programming</h3>
+				<b>Verbeelden en maken</b>
+				<p>Ik wil object oriented programming leren, dit wordt veel gebruikt in bedrijven en daarom ook veel gevraagd voor stage. Hiervoor ga ik samenwerken met iemand die dit al kan, of nog iemand die dit ook wil leren. Natuurlijk ook door het te gebruiken voor het project.</p>
+			</li>
+			<li>
+				<h3>Toegankelijkheid onderzoeken en verbeteren</h3>
+				<b>Ontwikkelen en reflecteren</b>
+				<p>Ik wil leren toegankelijkheid nog beter te maken en toe te passen. Toegankelijkheid is belangrijk omdat het gebruikers de mogelijkheid geeft je product te gebruiken, eigenlijk voor iedereen. Dit ga ik doen door alles wat ik maak toegankelijk proberen te maken door te testen en vervolgens te verbeteren.</p>
+			</li>
+			<li>
+				<h3>Vertrouwen op werk van anderen</h3>
+				<b>Multidisciplinair samenwerken/organiseren en regisseren</b>
+				<p>Ik wil leren samenwerken met anderen om samen iets te maken waarbij verschillende onderdelen van verschillende teamleden samen kunnen werken als één product. Dit ga ik doen door samen te werken met mensen met verschillende kwaliteiten en de rollen verdelen op basis van die kwaliteiten.</p>
+			</li>
+		</ul>
 
 		</div>
 	</main>
