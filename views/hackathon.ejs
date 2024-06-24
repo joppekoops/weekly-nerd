@@ -1,0 +1,66 @@
+<%- include('partials/head.ejs', {title: 'Weekly Nerd 1: Stop Using JS for That'}); %>
+	
+<header>
+	<hgroup>
+		<h1>CSS day-ta Hackathon</h1>
+	</hgroup>
+	<p><time datetime="2024-03-28">28 maart 2024</time></p>
+</header>
+<main>
+
+	<img src="/images/hackathon.webp" alt="A mockup of the hackthon website">
+
+	<h2>De hackathon</h2>
+
+	<p>In de week van 25 maart werd op de minor Web Development & Design een hackthon georganiseerd. Waar wij voor het 10 jarige jubileum van CSS day een website mochten ontwerpen. Hiervoor kregen we de data van de afgelopen 10 jaar via <a href="https://cssday.nl/data">cssday.nl/data</a>, daar mochten we mee doen wat we wilden. Wij zijn door de jury bestaande uit Peter Paul Koch en Krijn Hoetmer als beste uitgekozen en hebben kaartjes voor CSS day gewonnen.</p>
+
+	<h2>Onze Website</h2>
+
+	<p><a href="https://jopmolenaar.github.io/css-day-ta-JJJM/#2013">Onze website</a> laat in 10 vlakken wat zien van de afgelopen 9 jaren CSS day, met een feestelijk blokje voor dit jaar: vuurwerk. Als navigatie hebben wij een grafiek gebruikt die per jaar de prijs, het aantal deelnemers en het aantal weergaven laat zien. De grafiek scrollt mee als je naar de verschillende jaren toe scrollt, of andersom kan je op de grafiek klikken om naar een jaar te scrollen.</p>
+
+	<h3>Mijn Rol: Animaties</h3>
+
+	<p>Ik heb me het meeste bezig gehouden met de vele CSS animaties in de applicatie.</p>
+
+	<ul>
+		<li>
+			<h4>Laad scherm met logo</h4>
+			<img src="/images/logo-animatie_hackathon.webp" alt="">
+			<p>Als opener voor de app heb ik het CSS day logo geanimeerd.</p>
+		</li>
+		<li>
+			<h4>Animatie van de grafiek op scroll</h4>
+			<p>De grafiek animeert mee op de scroll van de sectie er onder. Die twee kan je koppelen met scroll animaties in CSS. Verder is de grafiek gewoon een vlakje in de achtergrondkleur die voor de lijntjes schuift. Een <i>hackathon</i> moet wel <i>hacky</i> blijven.</p>
+
+			<div class="codeblock" data-syntax="css">
+
+			<%- highlighter.codeToHtml(`body {
+    timeline-scope: --section-1;
+}
+
+main {
+    scroll-timeline: --section-1;
+}
+
+.graph {
+    animation-timeline: --section-1;
+}`, { lang: 'css', theme: 'monokai' }) %>
+			
+			</div>
+		</li>
+		<li>
+			<h4>Vuurwerk animatie</h4>
+			<img src="/images/vuurwerk_hackathon.gif" alt="">
+			<p>Bij het huidige jaar komt er een vuurwerk animatie om het jubileum te vieren.</p>
+		</li>
+	</ul>
+
+	<h2>Reflectie</h2>
+
+	<p>Naast dat ik natuurlijk veel over code heb geleerd, zoals scroll animaties heb ik ook iets anders belangrijks geleerd: slordig werken. Tot nu toe werk ik altijd heel netjes en geordend, maar bij de hackathon kwam ik er achter dat door een beetje slordiger te werken, je heel snel iets werkends neer kan zetten. Het slordige werken kwam natuurlijk door de tijdsdruk, maar ik denk dat als je dus kort de tijd hebt, dit ook een goede manier is om heel snel je concept duidelijk te maken. Als dat duidelijk is en het werkt goed, kan het later altijd nog netter.</p>
+
+
+
+</main>
+
+<%- include('partials/foot.ejs'); %>

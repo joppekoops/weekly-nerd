@@ -1,80 +1,94 @@
 <%- include('partials/head.ejs', {title: 'Weekly Nerd 4: The Wrapper Element'}); %>
 	
 <header>
-	<div class="wrapper">
 		<hgroup>
 			<p>Weekly Nerd 4</p>
 			<h1>The Wrapper Element</h1>
 		</hgroup>
 		<p>Door: Nils Binder op <time datetime="2024-03-06">6 maart 2024</time></p>
-	</div>
 </header>
 <main>
-	<div class="wrapper">
 		
-		<p>Nils Binder werkt bij <a href="9elements.com">9Elements</a> als front-end developer en hij is daar het hoofd van het webdesign team van zeven werknemers. Met zijn team werkt hij aan kleine to medium websites. In deze weekly nerd gaf Nils ons zijn ideeën over het veelgebruikte wrapper-element en hoe dit veel beter zou kunnen.</p>
+	<p>Nils Binder werkt bij <a href="9elements.com">9Elements</a> als front-end developer en hij is daar het hoofd van het webdesign team van zeven werknemers. Met zijn team werkt hij aan kleine to medium websites. In deze weekly nerd gaf Nils ons zijn ideeën over het veelgebruikte wrapper-element en hoe dit veel beter zou kunnen.</p>
 
-		<h2>De standaard wrapper</h2>
-		<p>Veel websites gebruiken een wrapper element om te zorgen dat de content niet breder dan een bepaalde breede wordt. Veelal wordt dit gedaan met een maximale breedte, wat <i>padding</i> en het centreren van de content.</p>
+	<h2>De standaard wrapper</h2>
+	<p>Veel websites gebruiken een wrapper element om te zorgen dat de content niet breder dan een bepaalde breede wordt. Veelal wordt dit gedaan met een maximale breedte, wat <i>padding</i> en het centreren van de content.</p>
 
-		<pre><code data-syntax="css">.wrapper {
-	max-width="800px";
-	margin: 0 auto;
-	padding: 1em;
-}</code></pre>
+	<div class="codeblock" data-syntax="css">
 
-		<p>Dit kan volgens Nils al beter door alleen de breedte en margin aan te geven en in de breedte de max en de min aan te geven. Hierdoor wordt de breedte precies, zonder de padding van die preciese breedte weer wordt afgehaald.</p>
+	<%- highlighter.codeToHtml(`.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+}`, { lang: 'css', theme: 'monokai' }) %>
+	
+	</div>
 
-		<pre><code data-syntax="css">.wrapper {
-	width: min( 100% - 3rem, 75ch );
-	margin-inline: auto;
-}</code></pre>
+	<p>Dit kan volgens Nils al beter door alleen de breedte en margin aan te geven en in de breedte de max en de min aan te geven. Hierdoor wordt de breedte precies, zonder de padding van die preciese breedte weer wordt afgehaald.</p>
 
-		<h2>Wat is er mis met de wrapper?</h2>
-		<p>“Waarom gebruiken we een wrapper?” vraagt Nils zich af. We maken met de wrapper helemaal niet goed gebruik van de hele schermbreedte en veel websites lijken door de wrapper hetzelfde. Volgens Nils komt het door de tools die we gebruiken. Vroeger werd Photoshop gebruikt en nu is er Figma. Figma is al iets beter omdat het meer op CSS lijkt met de auto-layout functie. Maar Figma is nog steeds gemaakt om die oude en dezelfde websites te ontwerpen. Alles is nog in pixels, hoewel CSS variabele eenheden heeft.</p>
-		<p>Veel gebruikte argument waarom we het nog steeds op de oude manier doen zijn: de twaalf colommen in het design, het is niet mogelijk en tailwind. Tailwind is net als Figma heel goed in de zelfde websites ontwerpen.</p>
+	<div class="codeblock" data-syntax="css">
 
-		<h2>De optionele colom techniek</h2>
-		<p>Nils heeft een andere oplossing voor het wrapper element die hij de optionele colom techniek noemt. Hiermee maakt hij het mogelijk om uit die ene colom te breken naar een van beide kanten op een bebaaplde breedte of naar de voledige breedte.</p>
+	<%- highlighter.codeToHtml(`.wrapper {
+    width: min( 100% - 3rem, 75ch );
+    margin-inline: auto;
+}`, { lang: 'css', theme: 'monokai' }) %>
+	
+	</div>
 
-		<p>Hiervoor maakt Nils gebruik van de <abbr title="fraction">fr</abbr> eenheid in CSS grid:</p>
+	<h2>Wat is er mis met de wrapper?</h2>
+	<p>“Waarom gebruiken we een wrapper?” vraagt Nils zich af. We maken met de wrapper helemaal niet goed gebruik van de hele schermbreedte en veel websites lijken door de wrapper hetzelfde. Volgens Nils komt het door de tools die we gebruiken. Vroeger werd Photoshop gebruikt en nu is er Figma. Figma is al iets beter omdat het meer op CSS lijkt met de auto-layout functie. Maar Figma is nog steeds gemaakt om die oude en dezelfde websites te ontwerpen. Alles is nog in pixels, hoewel CSS variabele eenheden heeft.</p>
+	<p>Veel gebruikte argument waarom we het nog steeds op de oude manier doen zijn: de twaalf kolommen in het design, het is niet mogelijk en tailwind. Tailwind is net als Figma heel goed in de zelfde websites ontwerpen.</p>
 
-		<figure><img src="/images/fractions-grid_the-wrapper-element.webp" alt=""></figure>
-		<figure><img src="/images/optionele-colom-voorbeeld_the-wrapper-element.webp" alt=""></figure>
+	<h2>De optionele kolom techniek</h2>
+	<p>Nils heeft een andere oplossing voor het wrapper element die hij de optionele kolom techniek noemt. Hiermee maakt hij het mogelijk om uit die ene kolom te breken naar een van beide kanten op een bebaaplde breedte of naar de voledige breedte.</p>
 
-		<p>Op een breeder scherm kunnen er colommen bij komen. Met <code>grid-column</code> kan je aangeven welke elementen in welke colom mogen overlopen.</p>
+	<p>Hiervoor maakt Nils gebruik van de <abbr title="fraction">fr</abbr> eenheid in CSS grid:</p>
 
-		<pre><code data-syntax="css">.container {
-	display: grid;
-	grid-template-columns: 2fr 3fr auto 1fr;
+	<figure class="full-width">
+		<img src="/images/fractions-grid_the-wrapper-element.webp" alt="Een voorbeeld van hoe je een grid op kan zetten met optionele kolommen door de fr eenheid te gebruiken" width="1280" height="759">
+		<img src="/images/optionele-kolom-voorbeeld_the-wrapper-element.webp" alt="Een voorbeeld waarin de optionele kolom techniek wordt toegepast waardoor grote headings buiten de tekst kolom uitsteken" width="1280" height="960">
+	</figure>
+
+	<p>Op een breeder scherm kunnen er kolommen bij komen. Met <code>grid-column</code> kan je aangeven welke elementen in welke kolom mogen overlopen.</p>
+
+	<div class="codeblock" data-syntax="css">
+
+	<%- highlighter.codeToHtml(`.container {
+    display: grid;
+    grid-template-columns: 2fr 3fr auto 1fr;
 }
 
 h1 {
-	grid-column: 2/4;
+    grid-column: 2/4;
 }
 
 p {
-	grid-column: 3;
-}</code></pre>
-
-		<h2>Voorbeelden</h2>
-		<p>Nils had nog een aantal voorbeelden van websites waar hij dit heeft toegepast.</p>
-
-		<h3>dasruhrgebiet.de</h3>
-		<p>Bij deze website komt op bredere schermen de navigatie aan de linker kant.</p>
-
-		<h3>bryck.com</h3>
-		<p>Bij deze website gaan de grote titels buiten de colom waar de tekst in staat.</p>
-
-		<p>Nils sluit af met een quote waar ik het zeker mee eens ben:</p>
-
-		<blockquote>
-			<p>Use the screen that is available.</p>
-		</blockquote>
-
-		<p>We hebben allerlei grote schermen waar we heel weinig gebruik van maken op het web, waarvan ik vind dat het zeker meer kan. Natuurlijk is het ook erg lastig te gebruiken, omdat we ook juist hele kleine schermen hebben. Nils zijn techniek is volgens mij zeker een verbetering op hoe we die ruimte wel op een <i>responsive</i> manier kunnen gebruiken. Als denk ik wel dat het mogelijk is om hier nog veel verder in te gaan. Uiteindelijk is Nils zijn oplossing nog steeds een soort wrapper.</p>
-
+    grid-column: 3;
+}`, { lang: 'css', theme: 'monokai' }) %>
+	
 	</div>
+
+	<h2>Voorbeelden</h2>
+	<p>Nils had nog een aantal voorbeelden van websites waar hij dit heeft toegepast.</p>
+
+	<h3>dasruhrgebiet.de</h3>
+	<figure class="full-width">
+		<img src="/images/das-ruhrgebiet-breed_the-wrapper-element.webp" alt="screenshot van dasruhrgebiet.de op breder scherm, met navigatie links">
+		<img src="/images/das-ruhrgebiet-smal_the-wrapper-element.webp" alt="screenshot van dasruhrgebiet.de op smal scherm, met navigatie boven">
+	</figure>
+	<p>Bij deze website komt op bredere schermen de navigatie aan de linker kant.</p>
+
+	<h3>bryck.com</h3>
+	<p>Bij deze website gaan de grote titels buiten de kolom waar de tekst in staat.</p>
+
+	<p>Nils sluit af met een quote waar ik het zeker mee eens ben:</p>
+
+	<blockquote>
+		<p>Use the screen that is available.</p>
+	</blockquote>
+
+	<p>We hebben allerlei grote schermen waar we heel weinig gebruik van maken op het web, waarvan ik vind dat het zeker meer kan. Natuurlijk is het ook erg lastig te gebruiken, omdat we ook juist hele kleine schermen hebben. Nils zijn techniek is volgens mij zeker een verbetering op hoe we die ruimte wel op een <i>responsive</i> manier kunnen gebruiken. Als denk ik wel dat het mogelijk is om hier nog veel verder in te gaan. Uiteindelijk is Nils zijn oplossing nog steeds een soort wrapper.</p>
+
 </main>
 
 <%- include('partials/foot.ejs'); %>

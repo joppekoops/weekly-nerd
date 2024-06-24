@@ -38,7 +38,8 @@
 			},
 			"url": "/post/stop-using-js-for-that",
 			"keywords": [
-				"js"
+				"js",
+				"css"
 			]
 		},
 		{
@@ -62,7 +63,33 @@
 			},
 			"url": "/post/enhancing-website-accessibility",
 			"keywords": [
-				"accessibility"
+				"accessibility",
+				"aria"
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/development-creation-creativity",
+			"headline": "Weekly Nerd 3: Development = Creation + Creativity",
+			"name": "Weekly Nerd 3: Development = Creation + Creativity",
+			"description": "Jeffrey Arts is zowel kunstenaar als developer. Hoewel hij als developer is begonnen met het werken voor grote bedrijven, heeft hij later nog een kunstopleiding gevolgd. In deze weekly nerd vertelde Jeffrey over zijn werkwijze.",
+			"datePublished": "2024-02-28",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/development-creation-creativity",
+			"keywords": [
+				"accessibility",
+				"aria"
 			]
 		},
 		{
@@ -117,6 +144,32 @@
 		},
 		{
 			"@type": "BlogPosting",
+			"@id": "/post/hackathon",
+			"headline": "CSS day-ta Hackathon",
+			"name": "CSS day-ta Hackathon",
+			"description": "In de week van 25 maart werd op de minor Web Development & Design een hackthon georganiseerd. Waar wij voor het 10 jarige jubileum van CSS day een website mochten ontwerpen. Hiervoor kregen we de data van de afgelopen 10 jaar via cssday.nl/data, daar mochten we mee doen wat we wilden. Wij zijn door de jury bestaande uit Peter Paul Koch en Krijn Hoetmer als beste uitgekozen en hebben kaartjes voor CSS day gewonnen.",
+			"datePublished": "2024-03-28",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/hackathon",
+			"keywords": [
+				"declarative",
+				"css",
+				"design"
+			]
+		},
+		{
+			"@type": "BlogPosting",
 			"@id": "/post/digitaal-toegankelijk",
 			"headline": "Weekly Nerd 6: Digitaal Toegankelijk",
 			"name": "Weekly Nerd 6: Digitaal Toegankelijk",
@@ -163,6 +216,99 @@
 			"keywords": [
 				"creativiteit"
 			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/aan-het-werk-wat-nu",
+			"headline": "Weekly Nerd 8: Aan het werk, wat nu?",
+			"name": "Weekly Nerd 8: Aan het werk, wat nu?",
+			"description": "Robert Spier heeft zelf CMD gestudeerd en daarna nog verder gegaan met Information Systems aan de Universiteit van Amsterdam. Hoewel Robert als docent bij CMD heeft gewerkt, is hij overgestapt naar werken als creative technologist bij Deloitte. Robert vertelde ons over zijn eigen werk en wat voor werk we na CMD kunnen gaan doen en wat we daaraan kunnen gaan verdienen.",
+			"datePublished": "2024-05-15",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/aan-het-werk-wat-nu",
+			"keywords": [
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/op-bezoek-bij-q42",
+			"headline": "Weekly Nerd 9: Op bezoek bij Q42",
+			"name": "Weekly Nerd 9: Op bezoek bij Q42",
+			"description": "Q42 is een bureau wat digitale producten bouwt. Ze hebben bijvoorbeeld projecten gedaan voor het Rijksmuseam, PostNL, Hema en Philips Hue. Hoewel Q42 natuurlijk voor hun klanten het werkt, vinden ze zelf de eindgebruiker belangrijker dan de klant. Zo houden ze heel goed rekening met de gebruikers ervaring en dus toegankelijkheid. Deze weekly nerd gingen we bij hun verstiging in Amsterdam op bezoek, waar ze een aantal van hun projecten hebben laten zien, waarin toegankelijkheid een grote rol heeft gespeeld.",
+			"datePublished": "2024-05-22",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/op-bezoek-bij-q42",
+			"keywords": [
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/waag-futurelab",
+			"headline": "Weekly Nerd 10: Waag Futurelab",
+			"name": "Weekly Nerd 10: Waag Futurelab",
+			"description": "Waag Futurelab doet onderzoek naar het etisch implementeren van tech. Dit doen ze vanuit de oude waag op de nieuwmarkt in Amsterdam. Deze weekly nerd was zowel een workshop als een onderzoek en test voor de waag. De weekly nerd werd gegeven door Danny en Marit van de Waat. Danny is lead van het internet lab en Marit is een developer.",
+			"datePublished": "2024-05-30",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/waag-futurelab",
+			"keywords": [
+			]
+		},
+		{
+			"@type": "BlogPosting",
+			"@id": "/post/pre-css-day",
+			"headline": "Weekly Nerd 11: Pre CSS day",
+			"name": "Weekly Nerd 11: Pre CSS day",
+			"description": "Deze laatste weekly nerd was een speciaal pre CSS day event voor CSS day op 6 en 7 juni, waar ook al een paar sprekers en bezoekers van CSS day aanwezig waren. Op dit event spraken Bramus van Damme en Miriam Suzanne.",
+			"datePublished": "2024-06-05",
+			"author": {
+				"@type": "Person",
+				"@id": "/person/joppekoops",
+				"name": "Joppe Koops"
+			},
+			"image": {
+				"@type": "ImageObject",
+				"@id": "",
+				"url": "",
+				"height": "",
+				"width": ""
+			},
+			"url": "/post/pre-css-day",
+			"keywords": [
+			]
 		}
+
 	]
 }

@@ -3,6 +3,12 @@ import { logger } from '@tinyhttp/logger';
 import ejs from 'ejs';
 import sirv from 'sirv';
 import fs from 'node:fs';
+import { getHighlighter } from 'shiki';
+
+const highlighter = await getHighlighter({
+  themes: ['monokai'],
+  langs: ['javascript', 'html', 'css'],
+});
 
 function formatDate(date) {
 
@@ -47,12 +53,12 @@ app.get('/', async(req, res) => {
 });
 
 app.get('/post/:id', async(req, res) => {
-	fs.access(`views/${req.params.id}.ejs`, (err) => {
+	fs.access(`views/${req.params.id}.ejs`, async(err) => {
 		if (err) {
 			res.status(404);
 			res.render('404');
 		} else {
-			res.render(req.params.id);
+			res.render(req.params.id, { highlighter });
 		}
 	});
 	

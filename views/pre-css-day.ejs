@@ -1,0 +1,99 @@
+<%- include('partials/head.ejs', {title: 'Weekly Nerd 1: Stop Using JS for That'}); %>
+	
+<header>
+	<hgroup>
+		<p>Weekly Nerd 11</p>
+		<h1>Pre CSS day</h1>
+	</hgroup>
+	<p>Door: Bramus van Damme en Miriam Suzanne op <time datetime="2024-06-05">5 juni 2024</time></p>
+</header>
+<main>
+
+	<p>Deze laatste weekly nerd was een speciaal pre CSS day event voor <a href="https://cssday.nl/2024">CSS day</a> op 6 en 7 juni, waar ook al een paar sprekers en bezoekers van CSS day aanwezig waren. Op dit event spraken Bramus van Damme en Miriam Suzanne.</p>
+	
+	<p><a href="https://www.bram.us/">Bramus van Damme</a> is een <i>webdeveloper</i> uit België en werkt voor Google als Chrome <i>developer relations engineer</i>. Hij vertelde ons over <i>cross-document view transitions</i>, een nieuwe <i>web feature</i>, waarmee overgangen tussen pagina's gemaakt kunnen worden. </p>
+
+	<h2>Cross-document view transitions</h2>
+
+	<p><i>Cross-document view transitions</i> is een nieuwe <i>feature</i> waarmee overgangen tussen pagina's gemaakt kunnen worden. Dit is handig voor de gebruikers ervaring, omdat gebruikers dan een idee hebben van wat er gebeurt tussen de pagina's, in plaats van dat het van de ene naar de andere pagina flitst. Bramus liet een handig voorbeeld zien van hoe dit gebruikers laat zien hoe bijvoorbeeld elementen verplaatsen op de pagina.</p>
+
+	<div class="iframe-container scale75 aspect4-3">
+		<iframe src="https://live-transitions.pages.dev/" frameborder="0"></iframe>
+	</div>
+
+	<p>Bron: <a href="https://live-transitions.pages.dev/">https://live-transitions.pages.dev/</a></p>
+
+	<p>Ik denk dat dit niet alleen goed laat zien hoe <i>view transitions</i> de gebruikers ervaring kunnen verbeteren, maar ook hoe we nu interessantere pagina's kunnen bouwen. Waar ik voorheen elementen op dezelfde plek gehouden zou hebben, zou dat de gebruiker ze niet kwijt zou raken, kan ik nu elementen op verschillende pagina's op andere plekken zetten. Een animatie kan goed aangeven dat het element verplaatst is en waarheen. Dit is dan nog maar één van de waarschijnlijke mogelijkheden, waar ik nu toevallig mee kwam.</p>
+
+	<h3>Hoe werkt het?</h3>
+	<p>Het gegeven voorbeeld is wel met <i>same-document view transitions</i> gemaakt, omdat <i>cross-document</i> nog niet bestaat. Tijdens de rest van zijn uitleg gebruikte Bramus daarom ook <i>same-document view transitions</i> en legt hij aan het einde uit wat het verschil is.</p>
+
+	<p>Om een overgang te starten, gebruiken we JavaScript:</p>
+
+	<div class="codeblock" data-syntax="javascript">
+		
+		<%- highlighter.codeToHtml(`document.startViewTransition(() => {
+    //whatever changes
+});`, { lang: 'javascript', theme: 'monokai' }) %>
+
+	</div>
+
+	<p>Tijdens de overgang maakt de browser een aantal stappen:</p>
+
+	<ol>
+		<li>De elementen voor de overgang vastleggen</li>
+		<li>Navigeren naar de andere pagina zonder die weer te geven</li>
+		<li>De elementen na de overgang vastleggen</li>
+		<li>Een overgang maken tussen de twee momenten</li>
+		<li>De nieuwe pagina weergeven</li>
+		<li>De opgeslagen momenten verwijderen</li>
+	</ol>
+
+	<p>In CSS kan je vervolgens verschillende element een naam geven met <code>view-transition-name</code> om losse elementen te animeren. De <i>root</i> heeft vanuit de <i>user-agent styles</i> al de naam <i>root</i>. Voor elk element wat een overgang heeft, worden psuedo element aangemaakt.</p>
+
+	<div class="codeblock">
+		
+		<%- highlighter.codeToHtml(`:root	::view-transition → overlay on top
+    ::view-transition-group
+        ::view-transition-image-pair(root) → blend mode isolation
+           ::view-transition-new(root)
+           ::view-transition-old(root)
+`, { lang: 'text', theme: 'monokai' }) %>
+
+	</div>
+
+	<p>Voor elke element wordt er een nieuwe groep met afbeeldingen aangemaakt. De overgangen zijn normale CSS animaties, dus op al deze element kan je de normale <i>properties</i> gebruiken. Dingen als kleur werken niet, omdat de overgang simpel bestaat uit pixels op het scherm.</p>
+
+	<h3>Stappen plan</h3>
+
+	<p>Als laaste gaf Bramus ons nog een handig stappenplan mee om een overgang te maken:</p>
+
+	<ol>
+		<li>
+			Herken de elementen die je wilt animeren en geeft ze een naam
+			<ul>
+				<li>Kijk naar element die op beide pagina's hetzelfde zijn</li>
+				<li>Het is oke als dingen net een beetje anders zijn</li>
+				<li>Geef alle elementen een naam. De elementen hoeven niet hetzelfde te zijn, ze hoeven alleen maar dezelfde naam te hebben</li>
+			</ul>
+		</li>
+
+		<li>
+			Start de animatie in JavaScript
+		</li>
+
+		<li>
+			Geef je eigen stijl aan de overgang met CSS
+		</li>
+
+	</ol>
+
+	<h3>Wat is anders aan cross-document</h3>
+
+	<p>Met <i>cross-document</i> hebben we natuurlijk te maken met verschillende pagina's en dus dat scripts opnieuw worden geladen. Bramus legde uit hoe dit is opgelost. Als eerste moeten beide pagina's aangeven dat ze aan de overgang mee doen met <code>@view-transitions{ navigation: auto; }</code> in de CSS. Verder zijn er nieuwe JavaScript <i>events</i>, omdat bestaande <i>events</i> of te laat of te vroeg zijn. Voor de oude pagina is dat <code>pageswap</code> en voor de nieuwe pagina <code>pagereveal</code>. Als laatste zei Bramus nog dat je wel op moet passen, omdat het <i>render blocking</i> is.</p>
+
+	<p>Als elementen dus lang duren om te laden, moet de overgang daar op wachten, hoewel je normaal de andere pagina natuurlijk al kan zien. Zelf lijkt dit me niet zo'n groot probleem, zolang je de gebruiker maar laat zien wat er gebeurt. Dat is uiteindelijk toch ook waar <i>view transitions</i> voor zijn.</p>
+
+</main>
+
+<%- include('partials/foot.ejs'); %>

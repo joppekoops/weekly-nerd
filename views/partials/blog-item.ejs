@@ -1,5 +1,8 @@
 <article class="blog-item">
 	<a href="<%= post['url'] %>"><h3><%= post['headline'] %></h3></a>
-	<b><time datetime=""><%= formatDate(post['datePublished']) %></time></b>
+	<b><time datetime="<%= post['datePublished'] %>"><%= formatDate(post['datePublished']) %></time></b>
 	<p><%= post['description'] %></p>
+	<div class="left"></div>
+	<div class="bottom"></div>
+	<div class="top"></div>
 </article>

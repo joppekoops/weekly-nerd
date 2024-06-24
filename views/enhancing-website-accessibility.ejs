@@ -1,91 +1,91 @@
 <%- include('partials/head.ejs', {title: 'Weekly Nerd 2: Enhancing Website Accessibility'}); %>
 	
 <header>
-	<div class="wrapper">
-		<hgroup>
-			<p>Weekly Nerd 2</p>
-			<h1>Enhancing Website Accessibility</h1>
-		</hgroup>
-		<p>Door: Fenna de Wilde op <time datetime="2024-02-07">7 februari 2024</time></p>
-	</div>
+	<hgroup>
+		<p>Weekly Nerd 2</p>
+		<h1>Enhancing Website Accessibility</h1>
+	</hgroup>
+	<p>Door: Fenna de Wilde op <time datetime="2024-02-07">7 februari 2024</time></p>
 </header>
 <main>
-	<div class="wrapper">
 
-		<p>Fenna de Wilde heeft zelf ook Communicatie & Multimedia Design gestudeerd en daarbij ook de minor Web Development & Design gevolgd. Nu werkt ze als <i>creative developer</i> bij <a href="https://tech.bakkenbaeck.com/">Bakken & Baeck</a>, een tech en design bedrijf. Fenna vertelde hoe toegankelijkheid vaak wordt vergeten en als niet belangrijk wordt gezien. “Er is heel veel mogelijk om mooie dingen te maken, maar gebruikers moeten het wel kunnen gebruiken” zegt Fenna. Vaak geven bedrijven hier niet om, dan is het belangrijk om te laten zien hoe belangrijk het is. In deze weekly nerd, gaf Fenna hier een aantal voorbeelden van.</p>
+	<p>Fenna de Wilde heeft zelf ook Communicatie & Multimedia Design gestudeerd en daarbij ook de minor Web Development & Design gevolgd. Nu werkt ze als <i>creative developer</i> bij <a href="https://tech.bakkenbaeck.com/">Bakken & Baeck</a>, een tech en design bedrijf. Fenna vertelde hoe toegankelijkheid vaak wordt vergeten en als niet belangrijk wordt gezien. “Er is heel veel mogelijk om mooie dingen te maken, maar gebruikers moeten het wel kunnen gebruiken” zegt Fenna. Vaak geven bedrijven hier niet om, dan is het belangrijk om te laten zien hoe belangrijk het is. In deze weekly nerd, gaf Fenna hier een aantal voorbeelden van.</p>
 
-		<p>We bekeken de voorbeelden op basis van de website voor Phantom (een crypto wallet), die Fenna heeft gemaakt. De <i>tech stack</i> die ze gebruikt heeft is: <i>NextJS</i>, <i>Emotion</i> voor styling, <i>Senity</i> als <abbr title="Content management system">CMS</abbr>, en <i>Framer Motion</i> voor animaties.</p>
+	<p>We bekeken de voorbeelden op basis van de website voor Phantom (een crypto wallet), die Fenna heeft gemaakt. De <i>tech stack</i> die ze gebruikt heeft is: <i>NextJS</i>, <i>Emotion</i> voor styling, <i>Senity</i> als <abbr title="Content management system">CMS</abbr>, en <i>Framer Motion</i> voor animaties.</p>
 
-		<h2>Focus State</h2>
+	<h2>Focus State</h2>
 
-		<p>De focus state is zo'n voorbeeld van iets wat vaak wordt vergeten of expres verwijderd. Maar niet iedereen kan een muis gebruiken en je moet kunnen zien waar je bent. Dat de focus expres wordt verwijderd komt meestal omdat de focus-state ook verschijnt als je met een muis iets focust. Hiervoor kan je <code>:focus-visible</code> gebruiken, die is alleen voor met toetsenbord. De gewone <code>:focus</code> is ook voor met muis.</p>
+	<p>De focus state is zo'n voorbeeld van iets wat vaak wordt vergeten of expres verwijderd. Maar niet iedereen kan een muis gebruiken en je moet kunnen zien waar je bent. Dat de focus expres wordt verwijderd komt meestal omdat de focus-state ook verschijnt als je met een muis iets focust. Hiervoor kan je <code>:focus-visible</code> gebruiken, die is alleen voor met toetsenbord. De gewone <code>:focus</code> is ook voor met muis.</p>
 
-		<p>Fenna maakt een standaard focus-state, zodat alle elementen in ieder geval een focus-state hebben. Dit doet ze voor alle elementen die niet de class <code>.custom-focus</code> hebben.</p>
+	<p>Fenna maakt een standaard focus-state, zodat alle elementen in ieder geval een focus-state hebben. Dit doet ze voor alle elementen die niet de class <code>.custom-focus</code> hebben.</p>
 
-		<pre><code data-syntax="css">*:focus-visible:not(.custom-focus) {
-	outline: 4px solid var(--red);
-	border-radius: 32px;
-}</code></pre>
+	<div class="codeblock" data-syntax="css">
 
-		<p>Zo kan ze vervolgens element een eigen specifieke focus opmaak geven met de <code>.custom-focus</code> class.</p> 
+	<%- highlighter.codeToHtml(`*:focus-visible:not(.custom-focus) {
+    outline: 4px solid var(--red);
+    border-radius: 32px;
+}`, { lang: 'css', theme: 'monokai' }) %>
 
-		<p>Dit vind ik eigenlijk wel een hele handige manier, omdat je echt alleen de focus van elementen opmaakt die niet hun eigen specifieke focus state hebben. Tot nu toe liet ik dit soort dingen altijd aan <i>specificity</i> over, maar dat betekende dat de selectoren van je specifieke focus-states altijd specifieker moeten zijn dan de standaard focus-state. Al zegt de naam specifieke focus-state misschien wel dat ze dat toch bijna altijd wel zijn.</p>
+	</div>
 
-		<h2>ARIA</h2>
+	<p>Zo kan ze vervolgens element een eigen specifieke focus opmaak geven met de <code>.custom-focus</code> class.</p> 
 
-		<p><abbr title="Accessible Rich Internet Applications">ARIA</abbr> is om aanvullende informatie te geven voor hulp technologieën. Fenna gaf wat voorbeelden die ze gebruikt:</p>
+	<p>Dit vind ik eigenlijk wel een hele handige manier, omdat je echt alleen de focus van elementen opmaakt die niet hun eigen specifieke focus state hebben. Tot nu toe liet ik dit soort dingen altijd aan <i>specificity</i> over, maar dat betekende dat de selectoren van je specifieke focus-states altijd specifieker moeten zijn dan de standaard focus-state. Al zegt de naam specifieke focus-state misschien wel dat ze dat toch bijna altijd wel zijn.</p>
 
-		<ul>
-			<li><code>aria-label</code> is voor beschrijvende tekst. Bijvoorbeeld voor icoontjes of logos. Dit kan ook state afhankelijk zijn en worden aangepast met JavaScript</li>
-			<li><code>aria-controls</code> is om aan te geven dat elementen in verbinding staan. Dit zet je op een element wat een ander element aanstuurt.</li>
-			<li><code>aria-expended</code> geeft aan dat het gekoppelde element uitgeklapt is of niet.</li>
-			<li><code>aria-live</code> geeft aan of een element gaat veranderen of niet. Dit kan drie waardes hebben: <code>off</code> betekend dat het niet veranderd, <code>polite</code> betekend dat de hulptechnologie eerst mag afmaken waar het mee bezig is en dan update geeft en <code>assertive</code> geeft aan de hulptechnologie gelijk de update aan moet geven.</li>
-			<li><code>aria-atomic</code> gaat samen met <code>aria-live</code> en geeft aan hoe de verandering moet worden aangegeven. Als de waarde <code>true</code> is, betekent het dat het hele element opnieuw moet worden gelezen, in plaats van alleen de verandering</li>
-		</ul>
+	<h2>ARIA</h2>
 
-		<p>Vaak gaan verschillende aria-attributen samen.</p>
+	<p><abbr title="Accessible Rich Internet Applications">ARIA</abbr> is om aanvullende informatie te geven voor hulp technologieën. Fenna gaf wat voorbeelden die ze gebruikt:</p>
 
-		<h2>Toegankelijke carrousel</h2>
+	<ul>
+		<li><code>aria-label</code> is voor beschrijvende tekst. Bijvoorbeeld voor icoontjes of logos. Dit kan ook state afhankelijk zijn en worden aangepast met JavaScript</li>
+		<li><code>aria-controls</code> is om aan te geven dat elementen in verbinding staan. Dit zet je op een element wat een ander element aanstuurt.</li>
+		<li><code>aria-expended</code> geeft aan dat het gekoppelde element uitgeklapt is of niet.</li>
+		<li><code>aria-live</code> geeft aan of een element gaat veranderen of niet. Dit kan drie waardes hebben: <code>off</code> betekend dat het niet veranderd, <code>polite</code> betekend dat de hulptechnologie eerst mag afmaken waar het mee bezig is en dan update geeft en <code>assertive</code> geeft aan de hulptechnologie gelijk de update aan moet geven.</li>
+		<li><code>aria-atomic</code> gaat samen met <code>aria-live</code> en geeft aan hoe de verandering moet worden aangegeven. Als de waarde <code>true</code> is, betekent het dat het hele element opnieuw moet worden gelezen, in plaats van alleen de verandering</li>
+	</ul>
 
-		<p>Volgens Fenna zijn carrousels voor toegankelijkheid het vreselijkste wat er is. Ook al ben ik het hier mee eens, denk ik toch dat we ze daarom niet minder zouden moeten gebruiken. Visueel vind ik ze namelijk wel heel erg handig. Daarom zouden we ze zo goed mogelijk toegankelijk kunnen maken. Fenna geeft de volgens haar beste oplossing:</p>
+	<p>Vaak gaan verschillende aria-attributen samen.</p>
 
-		<ul>
-			<li>Gebruik een <code>section</code> of <code>role="region"</code> voor de container en geef die een <code>aria-roledescription="carrousel"</code>.</li>
-			<li>Geef de slides die niet zichtbaar zijn <code>aria-hidden</code> en update dit met JavaScript wanneer ze wel zichtbaar worden.</li>
-			<li>Gebruik geen lijst met <i>list items</i>, want het aantal <i>list items</i>, wat dan wordt voorgelezen door de screenreader, komt dan niet meer overeen met het daadwerkelijk aantal <i>list items</i>.</li>
-			<li>Gebruik <code>aria-controls</code> op de knoppen van de carrousel zoals de pijltjes en de stipjes. De knoppen die actief zijn, geef je een <code>aria-disabled</code>.</li>
-		</ul>
+	<h2>Toegankelijke carrousel</h2>
 
-		<pre><code data-syntax="html">&lt;section aria-roledescription="carrousel" id="carrousel"&gt;
-	&lt;div class="slide"&gt;&lt;img src="https://unsplash.it/640/360?image=0" alt=""&gt;&lt;/div&gt;
-	&lt;div class="slide"&gt;&lt;img src="https://unsplash.it/640/360?image=10" alt=""&gt;&lt;/div&gt;
-	&lt;div class="slide"&gt;&lt;img src="https://unsplash.it/640/360?image=20" alt=""&gt;&lt;/div&gt;
-	&lt;div class="controls"&gt;
-		&lt;button aria-label="vorige dia" aria-controls="carrousel" id="prev"&gt;◀︎&lt;/button&gt;
-		&lt;div&gt;
-			&lt;button aria-label="dia 1" aria-controls="carrousel"&gt;◎&lt;/button&gt;
-			&lt;button aria-label="dia 2" aria-current="dia" aria-controls="carrousel" aria-disabled="true"&gt;◉&lt;/button&gt;
-			&lt;button aria-label="dia 3" aria-controls="carrousel"&gt;◎&lt;/button&gt;
-		&lt;/div&gt;
-		&lt;button aria-label="volgende dia" aria-controls="carrousel" id="next"&gt;▶︎&lt;/button&gt;
-  	&lt;/div&gt;
-&lt;/section&gt;</code></pre>
+	<p>Volgens Fenna zijn carrousels voor toegankelijkheid het vreselijkste wat er is. Ook al ben ik het hier mee eens, denk ik toch dat we ze daarom niet minder zouden moeten gebruiken. Visueel vind ik ze namelijk wel heel erg handig. Daarom zouden we ze zo goed mogelijk toegankelijk kunnen maken. Fenna geeft de volgens haar beste oplossing:</p>
 
-		<h2>Tips</h2>
+	<ul>
+		<li>Gebruik een <code>section</code> of <code>role="region"</code> voor de container en geef die een <code>aria-roledescription="carrousel"</code>.</li>
+		<li>Geef de slides die niet zichtbaar zijn <code>aria-hidden</code> en update dit met JavaScript wanneer ze wel zichtbaar worden.</li>
+		<li>Gebruik geen lijst met <i>list items</i>, want het aantal <i>list items</i>, wat dan wordt voorgelezen door de screenreader, komt dan niet meer overeen met het daadwerkelijk aantal <i>list items</i>.</li>
+		<li>Gebruik <code>aria-controls</code> op de knoppen van de carrousel zoals de pijltjes en de stipjes. De knoppen die actief zijn, geef je een <code>aria-disabled</code>.</li>
+	</ul>
 
-		<p>Verder geeft Fenna nog een paar algemene tips voor toegankelijkheid.</p>
+	<div class="codeblock" data-syntax="html">
 
-		<h3>Leesbaarheid</h3>
-		<p>Let voor zichtbaarheid op kleurcontrasten en lettergroottes. Voor contrast is een formule waarbij zwart-op-wit 21 op 1 is. Tekst moet minimaal 4,5 op 1 zijn. Dit kan je simpel checken in de dev-tools van je browser, die geeft aan of het wel of niet goed is. Hier kan je ook de lettergrootte zien, die moet minimaal 16 pixels zijn. Hierbij is ook de regellengte belangrijk, die moet tussen 50 en 75 karakters lang zijn.</p>
+	<%- highlighter.codeToHtml(`<section aria-roledescription="carrousel" id="carrousel">
+    <div class="slide"><img src="https://unsplash.it/640/360?image=0" alt=""></div>
+    <div class="slide"><img src="https://unsplash.it/640/360?image=10" alt=""></div>
+    <div class="slide"><img src="https://unsplash.it/640/360?image=20" alt=""></div>
+    <div class="controls">
+        <button aria-label="vorige dia" aria-controls="carrousel" id="prev">◀︎</button>
+        <div>
+            <button aria-label="dia 1" aria-controls="carrousel">◎</button>
+            <button aria-label="dia 2" aria-current="dia" aria-controls="carrousel" aria-disabled="true">◉</button>
+            <button aria-label="dia 3" aria-controls="carrousel">◎</button>
+        </div>
+        <button aria-label="volgende dia" aria-controls="carrousel" id="next">▶︎</button>
+        </div>
+</section>`, { lang: 'html', theme: 'monokai' }) %>
 
-		<h3>Semantiek voor de screenreader</h3>
-		<p>Goede semantiek is belangrijk voor de screenreader. Fenna's tip is om zelf de screenreader te gebruiken om te controleren of de semantiek goed is.</p>
+	</div>
 
-		<h2>Conclusie</h2>
-	</div>	
+	<h2>Tips</h2>
+
+	<p>Verder geeft Fenna nog een paar algemene tips voor toegankelijkheid.</p>
+
+	<h3>Leesbaarheid</h3>
+	<p>Let voor zichtbaarheid op kleurcontrasten en lettergroottes. Voor contrast is een formule waarbij zwart-op-wit 21 op 1 is. Tekst moet minimaal 4,5 op 1 zijn. Dit kan je simpel checken in de dev-tools van je browser, die geeft aan of het wel of niet goed is. Hier kan je ook de lettergrootte zien, die moet minimaal 16 pixels zijn. Hierbij is ook de regellengte belangrijk, die moet tussen 50 en 75 karakters lang zijn.</p>
+
+	<h3>Semantiek voor de screenreader</h3>
+	<p>Goede semantiek is belangrijk voor de screenreader. Fenna's tip is om zelf de screenreader te gebruiken om te controleren of de semantiek goed is.</p>
 </main>
-
-<script src="/scripts/script.js"></script>
 
 
 <%- include('partials/foot.ejs'); %>

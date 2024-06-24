@@ -1,21 +1,22 @@
 <%- include('partials/head.ejs', {title: 'Home'}); %>
 	
 	<header>
-		<div class="wrapper">
-			<h1>Weekly Nerd Blog</h1>
-		</div>
+		<h1>Weekly Nerd Blog</h1>
 	</header>
 
 	<main>
-		<div class="wrapper">
 
-		<h2>Artikelen</h2>
+		<h2>Blogs</h2>
+
+		<div class="blog-list full-width">
 	
 		<% for (post of posts) { %>
 
 			<%- include('partials/blog-item.ejs', {post})%>
 
 		<% }; %>
+
+		</div>
 
 		<h2>Leerdoelen</h2>
 
@@ -37,7 +38,63 @@
 			</li>
 		</ul>
 
-		</div>
+		<h2>Reflectie</h2>
+
+		<p>Over het algemeen vond ik het een hele leuke en leerzame opdracht. Er zaten verschillende kanten aan de opdracht, dit begon vanuit user experience en wij hebben hier zelf een technische kant aan toegevoegd. Ook moest het er visueel natuurlijk wel een beetje goed uit zien. Ik vind dat ik aan alle onderdelen evenveel gewerkt heb en daardoor diverse dingen geleerd.</p>
+
+		<h3>Leerdoelen</h3>
+
+		<ul>
+			<li>
+				<h4>Object Oriented Programming</h4>
+				<p>Jop en ik hadden allebei het leerdoel om <i>object-oriented programming</i> te leren, dit hebben we daarom zelf aan de opdracht toegevoegd. Vanaf de tweede week zijn we de app naar <i>object-oriented</i> gaan omschrijven. Hierbij werd gauw duidelijk dat ik het concept zelf niet zo moeilijk vind, maar het opsporen van <i>bugs</i> en waardoor ze ontstaan wel.</p>
+				<p>Aan het begin schreef ik heel erg gestructureerde code, wat ik later toen het beter ging weer een beetje los heb gelaten. Wat ik hier nog beter van heb geleerd is dat als je <i>object-oriented</i> doet, je dat wel voor alles moet blijven doen. Uiteindelijk is het nu toch niet zo net meer, waardoor het moeilijker werd dan het eigenlijk kon zijn.</p>
+				<p>Dit project was, denk ik wel een van de beste om <i>object-oriented</i> te maken door alle verschillende onderdelen. Ik heb ook geleerd dat <i>object-oriented</i> misschien niet altijd de juiste manier is.</p>
+			</li>
+
+			<li>
+				<h4>Toegankelijkheid onderzoeken en verbeteren</h4>
+				<p>De <i>socialmedia simulator</i> is natuurlijk van zichzelf niet zo'n toegankelijke app. Na het project is het dat ook zeker nog steeds niet, maar ik denk dat ik met het idee om de hele app op te bouwen met HTML-elementen in plaats van een canvas al een heel eind gekomen ben. Dit maakt het ook makkelijker om het later toegankelijk te maken.</p>
+				<p>Naast het grote probleem van de hele app heb ik ook aan wat kleine elementen gewerkt, zoals de <i>count input</i>. Hier heb ik zoveel mogelijk rekening gehouden met toegankelijkheid, door de standaard <i>input</i> uit te bereiden en niet iets compleets nieuws te maken. Zo heb ik zelf de <i>buttons</i> uit de <i>tab order</i> gehaald, omdat de input al met het toetsenbord te gebruiken is.</p>
+			</li>
+
+			<li>
+				<h4>Vertrouwen op werk van anderen</h4>
+				<p>Of ik nu juist meer of minder vertrouw op anderen weet ik niet. Ik weet wel dat ik op een andere manier te werk ben gegaan in de samenwerking. Op GitHub was de <i>main branch</i> beveiligd, waardoor er veel <i>pull requests</i> zijn geweest. Daarvan heb ik er heel veel beoordeeld. Daarbij heb ik geprobeerd feedback te geven op code van anderen in plaats van het zelf aan te passen. Ik denk dat hierdoor anderen bewuster worden van hun code en ervan kunnen leren, waardoor ik ze later beter kan vertrouwen, in plaats van dat zij mij niet vertrouwen omdat ik stiekem alles aanpast.</p>
+			</li>
+		</ul>
+
+		<p>Naast de leerdoelen heb ik nog veel andere dingen geleerd. Zo heb ik ook meer nagedacht over de visuele uitstraling van de app.</p>
+
+		<h3>Vakken</h3>
+		<ul>
+			<li>
+				<h4>Web Apps From Scratch</h4>
+				<p>Van dit vak heb ik veel meegekregen over samenwerken en hoe je een applicatie kan opzetten zodat dit samenwerken goed gaat. Eerder bij blok tech in jaar 2 hadden we constant <i>merge conflicts</i>, nu hebben we dat opgelost door in aparte bestanden te werken. In de meesterproef hebben we dit natuurlijk nog verder getrokken door <i>object-oriented</i> te gaan werken.</p>
+			</li>
+
+			<li>
+				<h4>CSS to the Rescue</h4>
+				<p>Ik heb veel nieuwe CSS-<i>features</i> ontdekt. Een aantal van die <i>features</i> hebben we ook in de meesterproef naast nog andere nieuwe <i>features</i>. In de meesterproef hebben we natuurlijk wel <i>fallbacks</i> ingebouwd. Ik denk zelfs dat ik door het bij CSS to the Rescue niet te doen, beter heb geleerd om het wel te doen.</p>
+			</li>
+
+			<li>
+				<h4>Browser Technologies</h4>
+				<p>Omdat het erfbelastingsformulier zo lang is, heb ik hier vooral geleerd om aan grote pagina's te werken. Veel elementen herhalen zich, maar om dat slim op te lossen heb ik goed moeten kijken naar hoe ik dingen modulair maak, zodat ze op alle verschillende plekken kunnen worden ingezet.</p>
+			</li>
+
+			<li>
+				<h4>Application Programming Interface</h4>
+				<p>Het belangrijkste wat ik heb geleerd vind ik, is hoe de <i>front-end</i> met de <i>back-end</i> communiceert. Dat kan via een <i>request</i>, maar ook door <i>events</i> te sturen. Bij de meesterproef heb ik hier niets aan gehad, omdat we juist <i>back-end</i> vermeden hebben.</p>
+			</li>
+
+			<li>
+				<h4>Human Centered Design</h4>
+				<p>Hier heb ik me meer verdiept in toegankelijkheid, iets wat in de meesterproef iets minder goed toe te passen was op de manier waarop we dat geleerd hebben. Ik denk dat het ook wel interessant is om juist die twee verschillende kanten te proberen: alles voor iedereen, of juist specifiek voor een persoon.</p>
+			</li>
+		</ul>
+
+
 	</main>
 
 <%- include('partials/foot.ejs'); %>
